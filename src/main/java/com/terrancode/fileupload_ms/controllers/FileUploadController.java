@@ -44,7 +44,7 @@ public class FileUploadController {
 	}
 
 	@GetMapping("/view/{fileName}")
-	public ResponseEntity<Resource> viewFile(@PathVariable String fileName, HttpServletRequest request) {
+	public ResponseEntity<Resource> viewFile(@PathVariable("fileName") String fileName, HttpServletRequest request) {
 		Resource resource = storageService.getResource(fileName);
 
 		// Try to determine file's content type
